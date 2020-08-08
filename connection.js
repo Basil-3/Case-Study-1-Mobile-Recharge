@@ -28,7 +28,7 @@ con.connect((err) => {
 
 // Endpoint to check particular number
 app.get('/numbers/:id', (req, res) => {
-    sql = "select * from products where number = ?;";
+    sql = "Select * from numbers Where number = ?;";
     con.query(sql, [req.params.id], (err, row, fields) => {
         if(err){
             console.log(err);
