@@ -66,7 +66,7 @@ app.put('/number', (req, res) => {
             if (err1){
                 console.log(err1);
             }
-            res.send("Hello " + number.name + " your balance is now Rs." + JSON.stringify(row1));
+            res.send("Hello " + number.name + " your balance is now Rs." + row1[0].balance);
         });
     });
 });
