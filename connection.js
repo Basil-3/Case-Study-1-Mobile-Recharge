@@ -62,11 +62,11 @@ app.put('/number', (req, res) => {
         if (err){
             console.log(err)
         }
-        con.query("Select * from numbers Where number = ?", [number.number], (err1, row1, fields1) => {
+        con.query("Select balance from numbers Where number = ?", [number.number], (err1, row1, fields1) => {
             if (err1){
                 console.log(err1);
             }
-            res.send("Hello " + number.name + " your balance is now Rs." + number.balance);
+            res.send("Hello " + number.name + " your balance is now Rs." + JSON.stringify(row1));
         });
     });
 });
